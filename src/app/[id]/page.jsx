@@ -40,13 +40,13 @@ export default function Page() {
   return (
     <>
       <div>
-        <header class="fixed top-0 left-0 w-full py-4 px-6 bg-[#0a0a0a] flex justify-between items-center z-20">
+        <header className="fixed top-0 left-0 w-full py-4 px-6 bg-[#0a0a0a] flex justify-between items-center z-20">
           <a href="https://buscador.cumbre.icu">
             <div className="flex items-center gap-2">
               <img
                 src="/img/cumbre_logo.png"
                 alt="Logo Cumbre"
-                class="w-[110px]"
+                className="w-[110px]"
               />
               <span className="w-[2px] h-[15px] bg-white hidden md:flex"></span>
               <div className="text-gray-300 text-sm hidden md:flex">
@@ -58,7 +58,7 @@ export default function Page() {
             <div className="text-sm text-gray-400 hidden md:flex">
               <span>Con ❤️ desde <span className="text-white">Cúcuta</span></span>
             </div>
-            <a href="">
+            <a href="https://www.cumbre.icu/contacto">
               <button className="bg-gradient-to-r from-blue-600 to-pink-600 p-2 px-4 font-bold text-white rounded-full text-sm">
                 Optener Ayuda
               </button>
