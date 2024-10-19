@@ -41,7 +41,7 @@ export default function Page() {
     <>
       <div>
         <header class="fixed top-0 left-0 w-full py-4 px-6 bg-[#0a0a0a] flex justify-between items-center z-20">
-          <a href="">
+          <a href="https://cumbre.icu">
             <div className="flex items-center gap-2">
               <img
                 src="/img/cumbre_logo.png"
