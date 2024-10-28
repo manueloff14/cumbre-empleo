@@ -2,8 +2,9 @@ export default function PanelLateral({ data, jobDetails }) {
     return (
         <div className="p-4 border-[1px] border-gray-500 rounded-3xl mt-3 lg:mt-0">
             <div className="border-b-[1px] border-gray-500 w-full flex flex-col items-center mb-3 pb-3">
-                <img src={jobDetails.img_empresa} alt="" className="rounded-lg" />
-                <h2 className="my-2 mb-1 font-bold text-lg">{data.company}</h2>
+                {/* poner la imagen jobDetails.img_empresa y si no está disponible poner "https://www.elempleo.com/resources/Content/dist/images/areas/JobsOffers/JobOfferDetail/icono-empresa-confidencial.jpg" */}
+                <img src={jobDetails.img_empresa || "https://www.elempleo.com/resources/Content/dist/images/areas/JobsOffers/JobOfferDetail/icono-empresa-confidencial.jpg"} alt="" className="rounded-lg w-32" />
+                <h2 className="my-2 mb-1 font-bold text-lg text-center">{data.company}</h2>
                 <span className="text-sm" >{jobDetails.area}</span>
             </div>
             <div>
@@ -27,22 +28,22 @@ export default function PanelLateral({ data, jobDetails }) {
                         <span>Empresa: <span className="text-gray-300">{data.company}</span></span>
                     </div>
                     <div>
-                        <span>Salario: <span className="text-gray-300">{jobDetails.salary}</span></span>
+                        <span>Salario: <span className="text-gray-300">{jobDetails.salary || "No especificado"}</span></span>
                     </div>
                     <div>
-                        <span>Ubicación: <span className="text-gray-300">{data.location}</span></span>
+                        <span>Ubicación: <span className="text-gray-300">{data.location || "No especificado"}</span></span>
                     </div>
                     <div>
-                        <span>Fecha de publicación: <span className="text-gray-300">{jobDetails.date_pub}</span></span>
+                        <span>Fecha de publicación: <span className="text-gray-300">{jobDetails.date_pub || "No especificado"}</span></span>
                     </div>
                     <div>
-                        <span>Fecha de vencimiento: <span className="text-gray-300">{jobDetails.date_ven}</span></span>
+                        <span>Fecha de vencimiento: <span className="text-gray-300">{jobDetails.date_ven || "No especificado"}</span></span>
                     </div>
                     <div>
-                        <span>Tipo de contrato: <span className="text-gray-300">{data.contrato}</span></span>
+                        <span>Tipo de contrato: <span className="text-gray-300">{data.contrato || "No especificado"}</span></span>
                     </div>
                     <div>
-                        <span>Horario: <span className="text-gray-300">{data.horario}</span></span>
+                        <span>Horario: <span className="text-gray-300">{data.horario || "No especificado"}</span></span>
                     </div>
                 </div>
 
