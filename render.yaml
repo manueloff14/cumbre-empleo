@@ -1,0 +1,16 @@
+# render.yaml
+services:
+  - type: web
+    name: empleo-cumbre
+    runtime: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    repo: https://github.com/manueloff14/cumbre-empleo.git
+    branch: main
+    region: oregon
+    plan: free
+    envVars:
+      - key: NODE_ENV
+        value: production
+    domains:
+      - empleo.cumbre.icu
