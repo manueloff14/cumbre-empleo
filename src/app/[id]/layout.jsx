@@ -1,7 +1,7 @@
 export async function generateMetadata({ params }) {
     const { id } = params;
     try {
-        const response = await fetch(`https://cumbre-server.onrender.com/api/blog/${id}`);
+        const response = await fetch(`https://cumbre-server-c1ll.onrender.com/api/blog/${id}`);
         if (response.ok) {
             const data = await response.json();
             return {
