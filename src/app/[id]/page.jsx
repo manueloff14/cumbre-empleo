@@ -83,7 +83,7 @@ export default function Page() {
             {!loading && data ? (
               <JobData data={data} jobDetails={jobDetails} />
             ) : (
-              <p>Cargando datos del trabajo...</p>
+              <p>Cargando datos de la vacante...</p>
             )}
           </div>
         </div>
