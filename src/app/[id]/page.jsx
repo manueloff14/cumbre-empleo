@@ -78,8 +78,8 @@ export default function Page() {
           </div>
         </header>
         {/* Mostrar resultados */}
-        <div class="pt-16 pb-24 px-6">
-          <div class="search-results w-full lg:w-[80%] pb-10 pt-3 mx-auto rounded-lg">
+        <div className="pt-16 pb-24 px-6">
+          <div className="search-results w-full lg:w-[80%] pb-10 pt-3 mx-auto rounded-lg">
             {!loading && data ? (
               <JobData data={data} jobDetails={jobDetails} />
             ) : (
