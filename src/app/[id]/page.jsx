@@ -21,7 +21,7 @@ export default function Page() {
   useEffect(() => {
     const fetchJob = async () => {
       try {
-        const response = await fetch(`https://cumbre-server-c1ll.onrender.com/api/job/${id}`);
+        const response = await fetch(`https://data.cumbre.icu/api/job/${id}`);
         if (response.ok) {
           const result = await response.json();
           setData(result.otherData);
