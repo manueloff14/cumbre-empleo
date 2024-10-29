@@ -26,6 +26,23 @@ export default function Page() {
           const result = await response.json();
           setData(result.otherData);
           setJobDetails(result.jobDetails);
+
+          // Recuperar título para el registro de visita
+          const titleJob = result.otherData.title_job;
+
+          // Obtener la IP, país y ciudad
+          const locationResponse = await fetch('https://ipapi.co/json/');
+          if (locationResponse.ok) {
+            const locationData = await locationResponse.json();
+            const ip = locationData.ip;
+            const country_name = locationData.country_name;
+            const city = locationData.city;
+
+            // Registrar visita
+            await fetch(`https://data.cumbre.icu/api/visit/${id}/${ip}/${country_name}/${city}/${titleJob}`);
+          } else {
+            console.error("Error al obtener la información de ubicación");
+          }
         } else {
           console.error("Job no encontrado");
         }
