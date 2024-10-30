@@ -1,7 +1,7 @@
 export async function generateMetadata({ params }) {
     const { id } = params;
     try {
-        const response = await fetch(`${process.env.BACKEND_URL}/api/blog/${id}`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/blog/${id}`);
         if (response.ok) {
             const data = await response.json();
             return {
