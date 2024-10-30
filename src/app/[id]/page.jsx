@@ -39,7 +39,7 @@ export default function Page() {
             const city = locationData.city;
 
             // Registrar visita
-            await fetch(`https://data.cumbre.icu/api/visit/${id}/${ip}/${country_name}/${city}/${titleJob}`);
+            // await fetch(`https://data.cumbre.icu/api/visit/${id}/${ip}/${country_name}/${city}/${titleJob}`);
           } else {
             console.error("Error al obtener la información de ubicación");
           }
@@ -72,11 +72,14 @@ export default function Page() {
         <header className="fixed top-0 left-0 w-full py-4 px-6 bg-white dark:bg-[#0a0a0a] flex justify-between items-center z-20">
           <a href="https://buscador.cumbre.icu">
             <div className="flex items-center gap-2">
-              <img
+              <div className='bg-[url("/img/cumbre_logo_negro.png")] dark:bg-[url("/img/cumbre_logo.png")] bg-cover bg-center w-[100px] h-[30px]'>
+
+              </div>
+              {/* <img
                 src={isDarkMode ? "/img/cumbre_logo.png" : "/img/cumbre_logo_negro.png"}
                 alt="Logo Cumbre"
                 className="w-[110px]"
-              />
+              /> */}
               <span className="w-[2px] h-[15px] bg-black dark:bg-white hidden md:flex"></span>
               <div className="text-black dark:text-gray-300 text-sm hidden md:flex">
                 <span>El buscador de empleos</span>
@@ -100,7 +103,10 @@ export default function Page() {
             {!loading && data ? (
               <JobData data={data} jobDetails={jobDetails} />
             ) : (
-              <p>Cargando datos de la vacante...</p>
+              <div className='flex justify-center items-center h-24'>
+                <div className="border-4 border-t-white dark:border-t-transparent border-black dark:border-white rounded-full h-7 w-7 animate-spin">
+                </div>
+              </div>
             )}
           </div>
         </div>
