@@ -21,7 +21,7 @@ export default function Page() {
   useEffect(() => {
     const fetchJob = async () => {
       try {
-        const response = await fetch(`https://data.cumbre.icu/api/job/${id}`);
+        const response = await fetch(`${process.env.BACKEND_URL}/api/job/${id}`);
         if (response.ok) {
           const result = await response.json();
           setData(result.otherData);
@@ -39,7 +39,7 @@ export default function Page() {
             const city = locationData.city;
 
             // Registrar visita
-            await fetch(`https://data.cumbre.icu/api/visit/${id}/${ip}/${country_name}/${city}/${titleJob}`);
+            await fetch(`${process.env.BACKEND_URL}/api/visit/${id}/${ip}/${country_name}/${city}/${titleJob}`);
           } else {
             console.error("Error al obtener la información de ubicación");
           }

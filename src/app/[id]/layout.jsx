@@ -1,7 +1,7 @@
 export async function generateMetadata({ params }) {
     const { id } = params;
     try {
-        const response = await fetch(`https://data.cumbre.icu/api/blog/${id}`);
+        const response = await fetch(`${process.env.BACKEND_URL}/api/blog/${id}`);
         if (response.ok) {
             const data = await response.json();
             return {
