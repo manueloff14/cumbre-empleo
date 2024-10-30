@@ -39,7 +39,7 @@ export default function Page() {
             const city = locationData.city;
 
             // Registrar visita
-            // await fetch(`https://data.cumbre.icu/api/visit/${id}/${ip}/${country_name}/${city}/${titleJob}`);
+            await fetch(`https://data.cumbre.icu/api/visit/${id}/${ip}/${country_name}/${city}/${titleJob}`);
           } else {
             console.error("Error al obtener la información de ubicación");
           }
