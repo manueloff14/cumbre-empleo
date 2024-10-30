@@ -26,14 +26,14 @@ export default function Buscador({ query }) {
         <div
             className="fixed bottom-0 left-0 w-full flex flex-col items-center shadow-lg justify-center pb-3 pt-6 px-6 lg:px-0 bg-[linear-gradient(to_bottom,transparent_5%,white_95%)] dark:bg-[linear-gradient(to_bottom,transparent_5%,black_95%)]"
         >
-            <div className="flex items-center gap-3 my-3 text-sm">
+            {/* <div className="flex items-center gap-3 my-3 text-sm">
                 <button className="text-white p-2 px-4 bg-gradient-to-r from-blue-500 to-pink-500 rounded-full font-bold border-2 border-white dark:border-gray-950 hover:border-gray-600 dark:hover:border-white transition-all duration-200">
                     Resultados
                 </button>
                 <button className="p-2 px-4 bg-gray-400 dark:bg-gray-800 rounded-full hover:bg-red-400 dark:hover:bg-red-950 transition-all duration-200 cursor-not-allowed">
                     Chat AI 🔒
                 </button>
-            </div>
+            </div> */}
             <form
                 action="https://buscador.cumbre.icu/buscar"
                 className="w-full lg:w-[50%] flex items-center bg-gray-200 dark:bg-gray-900 rounded-full border-[2px] border-gray-300 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 transition-all duration-200"
