@@ -30,19 +30,33 @@ export default function Page() {
           // Recuperar título para el registro de visita
           const titleJob = result.otherData.title_job;
 
-          // Obtener la IP, país y ciudad
-          const locationResponse = await fetch('https://ipapi.co/json/', { cache: 'no-store' });
-          if (locationResponse.ok) {
-            const locationData = await locationResponse.json();
-            const ip = locationData.ip;
-            const country_name = locationData.country_name;
-            const city = locationData.city;
-
-            // Registrar visita
-            await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/visit/${id}/${ip}/${country_name}/${city}/${titleJob}`, { cache: 'no-store' });
-          } else {
-            await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/visit/${id}/0.0.0.0/0/0/${titleJob}`, { cache: 'no-store' });
-          }
+          const guardarVisita = async ({ title }) => {
+            console.log(`Guardando visita para query: ${query}`); // Log para verificar ejecución
+            try {
+              // Solicitud para obtener la ubicación del usuario (mantiene caché)
+              const locationResponse = await fetch('https://ipapi.co/json/', { cache: 'no-store' });
+              if (locationResponse.ok) {
+                const locationData = await locationResponse.json();
+                const ip = locationData.ip;
+                const country_name = locationData.country_name;
+                const city = locationData.city;
+                console.log(`Datos de ubicación obtenidos: IP=${ip}, País=${country_name}, Ciudad=${city}`); // Log
+        
+                // Solicitud para guardar la visita (sin caché)
+                await fetch(`https://data.cumbre.icu/api/visit/${id}/${ip}/${country_name}/${city}/${title}`, { cache: 'no-store' });
+                console.log('Visita guardada correctamente'); // Log
+              } else {
+                console.warn('No se pudo obtener la ubicación, usando valores predeterminados');
+                // Solicitud para guardar la visita con valores predeterminados (sin caché)
+                await fetch(`https://data.cumbre.icu/api/visit/${id}/0.0.0.0/0/0/${title}`, { cache: 'no-store' });
+              }
+            } catch (error) {
+              console.error("Error al guardar la visita:", error);
+            }
+          };
+        
+          // Llama a guardarVisita sin await para no bloquear el renderizado
+          guardarVisita({ titleJob });
         } else {
           console.error("Job no encontrado");
         }
