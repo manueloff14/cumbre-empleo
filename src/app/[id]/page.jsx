@@ -31,7 +31,7 @@ export default function Page() {
           const titleJob = result.otherData.title_job;
 
           // Obtener la IP, país y ciudad
-          const locationResponse = await fetch('https://ipapi.co/json/');
+          const locationResponse = await fetch('https://ipapi.co/json/', { cache: 'no-store' });
           if (locationResponse.ok) {
             const locationData = await locationResponse.json();
             const ip = locationData.ip;
@@ -39,9 +39,9 @@ export default function Page() {
             const city = locationData.city;
 
             // Registrar visita
-            await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/visit/${id}/${ip}/${country_name}/${city}/${titleJob}`);
+            await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/visit/${id}/${ip}/${country_name}/${city}/${titleJob}`, { cache: 'no-store' });
           } else {
-            console.error("Error al obtener la información de ubicación");
+            await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/visit/${id}/0.0.0.0/0/0/${titleJob}`, { cache: 'no-store' });
           }
         } else {
           console.error("Job no encontrado");
