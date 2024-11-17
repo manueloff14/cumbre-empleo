@@ -20,20 +20,26 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <head>
-        {/* <!-- Google tag (gtag.js) --> */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RCP7TR5LLW"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-RCP7TR5LLW');
-        </script>
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Google Analytics: Script de carga asincrónica */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-RCP7TR5LLW"
+          strategy="afterInteractive"
+        />
+
+        {/* Google Analytics: Configuración */}
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-RCP7TR5LLW');
+          `}
+        </Script>
+
         {children}
       </body>
     </html>
