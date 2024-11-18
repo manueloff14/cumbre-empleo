@@ -22,6 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es">
       <head>
+	<meta name="yandex-verification" content="c5813a86fdb6a392" />
         {/* Incluir script externo */}
         <script
           async
