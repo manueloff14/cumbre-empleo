@@ -1,4 +1,4 @@
-// app/sitemap.xml/route.js
+// app/sitemap.txt/route.js
 
 export async function GET() {
   const EXTERNAL_DATA_URL = process.env.SITE_URL || 'https://empleo.cumbre.icu';

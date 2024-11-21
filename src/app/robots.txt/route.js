@@ -7,7 +7,7 @@ export async function GET() {
 User-agent: *
 Allow: /
   
-Sitemap: ${EXTERNAL_DATA_URL}/sitemap.xml
+Sitemap: ${EXTERNAL_DATA_URL}/sitemap_empleos.txt
   `;
 
     return new Response(robotsTxt.trim(), {
