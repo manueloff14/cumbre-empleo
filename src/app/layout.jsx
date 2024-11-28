@@ -39,6 +39,7 @@ export default function RootLayout({ children }) {
             `,
           }}
         ></script>
+	<meta name="monetag" content="0e36d4ac78c415595124f07b72e2faa3">
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
