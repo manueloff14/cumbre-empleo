@@ -40,6 +40,7 @@ export default function RootLayout({ children }) {
           }}
         ></script>
 	<meta name="monetag" content="0e36d4ac78c415595124f07b72e2faa3" />
+	<script src="https://alwingulla.com/88/tag.min.js" data-zone="116701" async data-cfasync="false"></script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
