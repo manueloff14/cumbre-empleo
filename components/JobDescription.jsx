@@ -41,7 +41,7 @@ export default function JobDescription({ jobDescription }) {
     <>
       {/* Primer contenedor con la clase 'addScript' */}
       <div
-        className="addScript w-full bg-gray-900 p-2 rounded-3xl"
+        className="addScript w-full bg-gray-200 dark:bg-gray-900 p-2 rounded-3xl"
       >
         <div className='p-3'>
           <strong>Patrocinado</strong>
