@@ -43,7 +43,7 @@ export default function Page() {
                 console.log(`Datos de ubicación obtenidos: IP=${ip}, País=${country_name}, Ciudad=${city}`); // Log
         
                 // Solicitud para guardar la visita (sin caché)
-                // await fetch(`https://data.cumbre.icu/api/visit/${id}/${ip}/${country_name}/${city}/${title}`, { cache: 'no-store' });
+                await fetch(`https://data.cumbre.icu/api/visit/${id}/${ip}/${country_name}/${city}/${title}`, { cache: 'no-store' });
                 console.log('Visita guardada correctamente'); // Log
               } else {
                 console.warn('No se pudo obtener la ubicación, usando valores predeterminados');
