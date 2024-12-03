@@ -21,7 +21,7 @@ export default function Page() {
   useEffect(() => {
     const fetchJob = async () => {
       try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/job/${id}`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || 'https://data.cumbre.icu'}/api/job/${id}`);
         if (response.ok) {
           const result = await response.json();
           setData(result.otherData);
@@ -43,7 +43,7 @@ export default function Page() {
                 console.log(`Datos de ubicación obtenidos: IP=${ip}, País=${country_name}, Ciudad=${city}`); // Log
         
                 // Solicitud para guardar la visita (sin caché)
-                await fetch(`https://data.cumbre.icu/api/visit/${id}/${ip}/${country_name}/${city}/${title}`, { cache: 'no-store' });
+                // await fetch(`https://data.cumbre.icu/api/visit/${id}/${ip}/${country_name}/${city}/${title}`, { cache: 'no-store' });
                 console.log('Visita guardada correctamente'); // Log
               } else {
                 console.warn('No se pudo obtener la ubicación, usando valores predeterminados');

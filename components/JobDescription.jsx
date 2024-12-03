@@ -3,34 +3,57 @@ import { useEffect } from 'react';
 
 export default function JobDescription({ jobDescription }) {
   useEffect(() => {
-    const script1 = document.createElement("script");
-    script1.type = "text/javascript";
-    script1.innerHTML = `
-      atOptions = {
-        'key' : '81de62cf173c21bf4c00f1c25d789f71',
-        'format' : 'iframe',
-        'height' : 90,
-        'width' : 728,
-        'params' : {}
-      };
-    `;
-    document.body.appendChild(script1);
+    // Seleccionar todos los elementos con la clase 'addScript'
+    const scriptContainers = document.querySelectorAll('.addScript');
 
-    const script2 = document.createElement("script");
-    script2.type = "text/javascript";
-    script2.src = "//www.highperformanceformat.com/81de62cf173c21bf4c00f1c25d789f71/invoke.js";
-    document.body.appendChild(script2);
+    if (scriptContainers.length === 0) {
+      console.error("No se encontraron contenedores con la clase 'addScript'");
+      return;
+    }
 
+    // Array para almacenar los scripts creados
+    const scripts = [];
+
+    // Crear e insertar el script en cada contenedor
+    scriptContainers.forEach((container) => {
+      // Crear el script con el nuevo código
+      const script = document.createElement("script");
+      script.async = true;
+      script.setAttribute('data-cfasync', 'false');
+      script.src = "//pl25175659.profitablecpmrate.com/68e0ba06e2a776b8623ef01baf8e8f00/invoke.js";
+
+      // Insertar el script dentro del contenedor
+      container.appendChild(script);
+
+      // Almacenar el script para poder limpiarlo luego
+      scripts.push({ container, script });
+    });
+
+    // Limpiar los scripts cuando el componente se desmonte
     return () => {
-      // Limpiar los scripts cuando el componente se desmonte
-      document.body.removeChild(script1);
-      document.body.removeChild(script2);
+      scripts.forEach(({ container, script }) => {
+        container.removeChild(script);
+      });
     };
   }, []);
 
   return (
-    <div className="prose max-w-none dark:prose-invert">
-      <ReactMarkdown>{jobDescription}</ReactMarkdown>
-    </div>
+    <>
+      {/* Primer contenedor con la clase 'addScript' */}
+      <div
+        className="addScript w-full bg-gray-900 p-2 rounded-3xl"
+      >
+        <div className='p-3'>
+          <strong>Patrocinado</strong>
+        </div>
+        {/* El script insertará el contenedor aquí */}
+        <div id="container-68e0ba06e2a776b8623ef01baf8e8f00"></div>
+      </div>
+
+      {/* Aquí se muestra el contenido de ReactMarkdown */}
+      <div className="prose max-w-none dark:prose-invert">
+        <ReactMarkdown>{jobDescription}</ReactMarkdown>
+      </div>
+    </>
   );
 }
