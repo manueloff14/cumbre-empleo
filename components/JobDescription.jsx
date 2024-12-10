@@ -2,7 +2,7 @@ import ReactMarkdown from 'react-markdown';
 import { useEffect } from 'react';
 
 export default function JobDescription({ jobDescription }) {
-  useEffect(() => {
+  /* useEffect(() => {
     // Seleccionar todos los elementos con la clase 'addScript'
     const scriptContainers = document.querySelectorAll('.addScript');
 
@@ -35,20 +35,19 @@ export default function JobDescription({ jobDescription }) {
         container.removeChild(script);
       });
     };
-  }, []);
+  }, []); */
 
   return (
     <>
       {/* Primer contenedor con la clase 'addScript' */}
-      <div
-        className="addScript w-full bg-gray-200 dark:bg-gray-900 p-2 rounded-3xl"
+      {/* <div
+        className="addScript w-full bg-gray-200 dark:bg-gray-900 p-2 rounded-3xl hidden"
       >
         <div className='p-3'>
           <strong>Patrocinado</strong>
         </div>
-        {/* El script insertará el contenedor aquí */}
         <div id="container-68e0ba06e2a776b8623ef01baf8e8f00"></div>
-      </div>
+      </div> */}
 
       {/* Aquí se muestra el contenido de ReactMarkdown */}
       <div className="prose max-w-none dark:prose-invert">
