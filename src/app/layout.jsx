@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import ClickPopupAdvanced from "../../components/PopUpScript";
+import LayoutBanner from "../../components/LayoutBanner";
+/* import ClickPopupAdvanced from "../../components/PopUpScript"; */
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -48,7 +49,9 @@ export default function RootLayout({ children }) {
       >
         {children}
 
-        <ClickPopupAdvanced />
+        <LayoutBanner />
+
+        {/* <ClickPopupAdvanced /> */}
       </body>
     </html>
   );
