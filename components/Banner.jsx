@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-const TIMER_DURATION = 30; // 30 segundos para la cuenta regresiva
+const TIMER_DURATION = 15; // 30 segundos para la cuenta regresiva
 
 const Banner = ({ setHasBannerBeenShown }) => {
     const [showBanner, setShowBanner] = useState(false);
