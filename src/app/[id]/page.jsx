@@ -148,8 +148,11 @@ export default function Page() {
 
                 <span className="text-red-700 dark:text-red-100 text-sm">
                   La URL
-                  <code className="bg-red-200 dark:bg-red-700 px-1 py-0.5 rounded mx-1 text-red-800 dark:text-white">
-                    {typeof window !== 'undefined' ? window.location.href : ''}
+                  <code className="bg-red-200 dark:bg-red-700 px-1 py-0.5 rounded mx-1 text-red-800 dark:text-white break-all">
+                    {typeof window !== 'undefined'
+                      ? decodeURIComponent(window.location.href)
+                      : ''
+                    }
                   </code>
                   parece ser incorrecta. ¡Por favor, revísala o intenta con otra.
                 </span>
