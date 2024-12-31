@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { useParams, useSearchParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
@@ -41,39 +41,6 @@ export default function Page() {
             // Asignamos los datos
             setData(result.otherData);
             setJobDetails(result.jobDetails);
-
-            // Recuperar título para el registro de visita
-            const titleJob = result.otherData.title_job;
-
-            const guardarVisita = async ({ title }) => {
-              console.log(`Guardando visita para query: ${query}`);
-              try {
-                // Obtener ubicación del usuario (sin caché)
-                const locationResponse = await fetch('https://ipapi.co/json/', { cache: 'no-store' });
-                if (locationResponse.ok) {
-                  const locationData = await locationResponse.json();
-                  const ip = locationData.ip;
-                  const country_name = locationData.country_name;
-                  const city = locationData.city;
-                  console.log(`Datos de ubicación: IP=${ip}, País=${country_name}, Ciudad=${city}`);
-
-                  // Guardar la visita
-                  await fetch(`https://data.cumbre.icu/api/visit/${id}/${ip}/${country_name}/${city}/${title}`, {
-                    cache: 'no-store'
-                  });
-                } else {
-                  console.warn('No se pudo obtener la ubicación, usando valores predeterminados');
-                  await fetch(`https://data.cumbre.icu/api/visit/${id}/0.0.0.0/0/0/${title}`, {
-                    cache: 'no-store'
-                  });
-                }
-              } catch (error) {
-                console.error("Error al guardar la visita:", error);
-              }
-            };
-
-            // Llamada sin await para no bloquear
-            guardarVisita({ title: titleJob });
           }
         }
       } catch (error) {
@@ -119,7 +86,7 @@ export default function Page() {
             </div>
             <a href="https://www.cumbre.icu/contacto">
               <button className="bg-gradient-to-r from-blue-600 to-pink-600 p-2 px-4 font-bold text-white rounded-full text-sm">
-                Optener Ayuda
+                Obtener Ayuda
               </button>
             </a>
           </div>
