@@ -20,7 +20,7 @@ export default function PanelLateral({ data, jobDetails }) {
         <div className="p-4 border-[1px] border-gray-300 dark:border-gray-500 rounded-3xl mt-3 lg:mt-0">
             <div className="border-b-[1px] border-gray-300 dark:border-gray-500 w-full flex flex-col items-center mb-3 pb-3">
                 {/* poner la imagen jobDetails.img_empresa y si no está disponible poner "https://www.elempleo.com/resources/Content/dist/images/areas/JobsOffers/JobOfferDetail/icono-empresa-confidencial.jpg" */}
-                <img src={jobDetails.img_empresa || "https://www.elempleo.com/resources/Content/dist/images/areas/JobsOffers/JobOfferDetail/icono-empresa-confidencial.jpg"} alt="" className="rounded-lg w-32 border-[1px] border-gray-300 dark:border-transparent" />
+                <img src={jobDetails.img_empresa || "https://www.elempleo.com/resources/Content/dist/images/areas/JobsOffers/JobOfferDetail/icono-empresa-confidencial.jpg"} alt="" className="rounded-lg w-32 border-[1px] border-gray-300 dark:border-transparent bg-white" />
                 <h2 className="my-2 mb-1 font-bold text-lg text-center">{data.company}</h2>
                 <span className="text-sm" >{jobDetails.area}</span>
             </div>
