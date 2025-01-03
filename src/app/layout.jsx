@@ -49,7 +49,7 @@ export default function RootLayout({ children }) {
       >
         {children}
 
-        <LayoutBanner />
+        {/* <LayoutBanner /> */}
 
         {/* <ClickPopupAdvanced /> */}
       </body>
