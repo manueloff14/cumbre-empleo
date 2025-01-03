@@ -4,6 +4,7 @@ import { useParams, useSearchParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import JobData from '../../../components/JobData';
 import Buscador from '../../../components/Buscador';
+import Vencida from '../../../components/Vencida'; // Importa el componente Vencida
 
 export default function Page() {
   const params = useParams();
@@ -17,6 +18,7 @@ export default function Page() {
   const [jobDetails, setJobDetails] = useState(null);
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState(""); // Para manejar el mensaje de error
+  const [isExpired, setIsExpired] = useState(false); // Estado para manejar si la vacante está vencida
 
   // Para tema oscuro
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -53,6 +55,36 @@ export default function Page() {
 
     fetchJob();
   }, [id, query]);
+
+  // Verificar si la vacante está vencida
+  useEffect(() => {
+    if (jobDetails && jobDetails.date_ven) {
+      const verificarVencimiento = () => {
+        const fechaVencimiento = jobDetails.date_ven;
+        // Expresión regular para validar el formato YYYY-MM-DD
+        const regexFecha = /^\d{4}-\d{2}-\d{2}$/;
+
+        if (!regexFecha.test(fechaVencimiento)) {
+          // Si el formato no es válido, consideramos que ha vencido
+          setIsExpired(true);
+          return;
+        }
+
+        const [year, month, day] = fechaVencimiento.split('-').map(Number);
+        const fechaVen = new Date(year, month - 1, day);
+        const hoy = new Date();
+
+        // Comparar fechas
+        if (fechaVen < hoy) {
+          setIsExpired(true);
+        } else {
+          setIsExpired(false);
+        }
+      };
+
+      verificarVencimiento();
+    }
+  }, [jobDetails]);
 
   // Manejo de tema oscuro
   useEffect(() => {
@@ -128,7 +160,10 @@ export default function Page() {
 
             {/* 3. Datos cargados exitosamente */}
             {!loading && !errorMessage && data && (
-              <JobData data={data} jobDetails={jobDetails} />
+              <>
+                <JobData data={data} jobDetails={jobDetails} />
+                {isExpired && <Vencida />} {/* Renderiza Vencida si está vencida */}
+              </>
             )}
           </div>
         </div>
