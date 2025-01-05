@@ -161,7 +161,7 @@ export default function Page() {
             {/* 3. Datos cargados exitosamente */}
             {!loading && !errorMessage && data && (
               <>
-                <JobData data={data} jobDetails={jobDetails} />
+                <JobData data={data} jobDetails={jobDetails} isExpired={isExpired} isDarkMode={isDarkMode} />
                 {isExpired && <Vencida />} {/* Renderiza Vencida si está vencida */}
               </>
             )}
