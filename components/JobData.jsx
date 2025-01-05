@@ -8,7 +8,7 @@ export default function JobData({ data, jobDetails, isExpired, isDarkMode }) {
             <ul className="space-y-6 w-full lg:w-[60%]">
                 {/* Condicional para mostrar el mensaje basado en isExpired */}
                 <div className="w-full">
-                    {isExpired ? <h1>Expiró</h1> : <BannerAds isDarkMode={isDarkMode} />}
+                    {isExpired ? '' : <BannerAds isDarkMode={isDarkMode} />}
                 </div>
                 <JobDescription jobDescription={data.jobDescription} />
             </ul>
