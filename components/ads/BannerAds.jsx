@@ -123,7 +123,7 @@ export default function BannerAds({ isDarkMode }) {
                                     marginRight: index === products.length - 1 ? 0 : "16px",
                                     overflow: 'visible'
                                 }}
-                                className="h-[100px] border-[1px] border-gray-400 dark:border-gray-700 rounded-2xl p-4 flex flex-col justify-between cursor-pointer transition-transform duration-300 ease-in-out z-20"
+                                className="h-[100px] border-[1px] border-gray-400 dark:border-gray-700 rounded-2xl p-4 flex flex-col justify-between cursor-pointer transition-transform duration-300 ease-in-out"
                                 onMouseEnter={(e) => {
                                     e.currentTarget.style.transform = 'scale(0.95)';
                                     e.currentTarget.style.borderColor = '#fff'; // Blanco
