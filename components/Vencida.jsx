@@ -26,7 +26,7 @@ const Vencida = () => {
                         Esta vacante ya no está disponible.
                     </p>
                     <p className="mt-2 text-white font-bold">
-                        Te recomendamos usar el búscador.
+                        Te recomendamos usar el búscador para encontrar una oferta laboral similar.
                     </p>
                 </div>
             </div>

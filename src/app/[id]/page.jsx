@@ -58,9 +58,16 @@ export default function Page() {
 
   // Verificar si la vacante está vencida
   useEffect(() => {
-    if (jobDetails && jobDetails.date_ven) {
+    if (jobDetails) {
       const verificarVencimiento = () => {
         const fechaVencimiento = jobDetails.date_ven;
+
+        if (!fechaVencimiento) {
+          // Si no existe fechaVencimiento, consideramos que ha vencido
+          setIsExpired(true);
+          return;
+        }
+
         // Expresión regular para validar el formato YYYY-MM-DD
         const regexFecha = /^\d{4}-\d{2}-\d{2}$/;
 

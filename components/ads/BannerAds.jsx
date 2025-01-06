@@ -4,57 +4,57 @@ export default function BannerAds({ isDarkMode }) {
     const products = [
         {
             id: 1,
-            name: "Zapato Dama Cocido Personalizado",
-            discountPercentage: 10,
-            currentPrice: 75000,
-            description: "Descripción breve del Product 1.",
-            tallas: "35, 36, 37, 38, 39, 40",
-            srcImg: "https://i.ibb.co/H4T9ctP/Whats-App-Image-2025-01-04-at-9-59-36-AM.jpg"
+            name: "Morral Acrílico Pequeño",
+            discountPercentage: 22,
+            currentPrice: 79900,
+            description: "Descripción breve del Product 4.",
+            material: "Lona de Alta Resistencia",
+            srcImg: "https://i.ibb.co/HNn7JcY/IMG-20250106-WA0039.jpg"
         },
         {
             id: 2,
-            name: "Trio Morral Escolar con Ruedas",
-            discountPercentage: 20,
-            currentPrice: 110000,
-            description: "Descripción breve del Product 4.",
-            material: "Lona importada",
-            srcImg: "https://i.ibb.co/K0kfkXb/Whats-App-Image-2025-01-04-at-10-00-54-AM.jpg"
+            name: "Bolso Mediano TOTTO Liso",
+            discountPercentage: 25,
+            currentPrice: 89900,
+            description: "Descripción breve del Product 1.",
+            procedencia: "Producto Importado 🇱🇷",
+            srcImg: "https://i.ibb.co/B6znhqx/Whats-App-Image-2025-01-06-at-2-45-02-PM.jpg"
         },
         {
             id: 3,
-            name: "Zapato Dama Cocido Personalizado",
-            discountPercentage: 10,
-            currentPrice: 75000,
-            description: "Descripción breve del Product 1.",
-            tallas: "35, 36, 37, 38, 39, 40",
-            srcImg: "https://i.ibb.co/RY9tf49/Whats-App-Image-2025-01-04-at-9-59-38-AM-1.jpg"
+            name: "Morral Acrílico Pequeño",
+            discountPercentage: 22,
+            currentPrice: 79900,
+            description: "Descripción breve del Product 4.",
+            material: "Lona de Alta Resistencia",
+            srcImg: "https://i.ibb.co/r0cMpCb/IMG-20250106-WA0038.jpg"
         },
         {
             id: 4,
-            name: "Trio Morral Escolar con Ruedas",
-            discountPercentage: 20,
-            currentPrice: 110000,
+            name: "Morral Acrílico Pequeño",
+            discountPercentage: 22,
+            currentPrice: 79900,
             description: "Descripción breve del Product 4.",
-            material: "Lona importada",
-            srcImg: "https://i.ibb.co/8Bb1GXj/Whats-App-Image-2025-01-04-at-10-00-53-AM-1.jpg"
+            material: "Lona de Alta Resistencia",
+            srcImg: "https://i.ibb.co/XL5vv4C/IMG-20250106-WA0037.jpg"
         },
         {
             id: 5,
-            name: "Zapato Dama Cocido Personalizado",
-            discountPercentage: 10,
-            currentPrice: 75000,
-            description: "Descripción breve del Product 1.",
-            tallas: "35, 36, 37, 38, 39, 40",
-            srcImg: "https://i.ibb.co/nghtBMS/Whats-App-Image-2025-01-04-at-9-59-38-AM.jpg"
+            name: "Morral Acrílico Pequeño",
+            discountPercentage: 22,
+            currentPrice: 79900,
+            description: "Descripción breve del Product 4.",
+            material: "Lona de Alta Resistencia",
+            srcImg: "https://i.ibb.co/7WrB9q6/IMG-20250106-WA0036.jpg"
         },
         {
             id: 6,
-            name: "Trio Morral Escolar con Ruedas",
-            discountPercentage: 20,
-            currentPrice: 110000,
+            name: "Morral Acrílico Pequeño",
+            discountPercentage: 22,
+            currentPrice: 79900,
             description: "Descripción breve del Product 4.",
-            material: "Lona importada",
-            srcImg: "https://i.ibb.co/DzBnwwq/Whats-App-Image-2025-01-04-at-10-00-53-AM.jpg"
+            material: "Lona de Alta Resistencia",
+            srcImg: "https://i.ibb.co/fpJ3Whb/IMG-20250106-WA0035.jpg"
         }
     ];
 
@@ -65,7 +65,7 @@ export default function BannerAds({ isDarkMode }) {
     const scrollLeft = () => {
         if (scrollContainerRef.current) {
             scrollContainerRef.current.scrollBy({
-                left: -210,
+                left: -190,
                 behavior: "smooth",
             });
         }
@@ -74,7 +74,7 @@ export default function BannerAds({ isDarkMode }) {
     const scrollRight = () => {
         if (scrollContainerRef.current) {
             scrollContainerRef.current.scrollBy({
-                left: 210,
+                left: 190,
                 behavior: "smooth",
             });
         }
@@ -120,9 +120,19 @@ export default function BannerAds({ isDarkMode }) {
                                 style={{
                                     minWidth: "180px",
                                     // Agregamos paddingLeft excepto en el último
-                                    marginRight: index === products.length - 1 ? 0 : "16px"
+                                    marginRight: index === products.length - 1 ? 0 : "16px",
+                                    overflow: 'visible'
                                 }}
-                                className="h-[100px] border-[1px] border-gray-400 dark:border-gray-700 rounded-2xl p-4 flex flex-col justify-between cursor-pointer"
+                                className="h-[100px] border-[1px] border-gray-400 dark:border-gray-700 rounded-2xl p-4 flex flex-col justify-between cursor-pointer transition-transform duration-300 ease-in-out z-20"
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.transform = 'scale(0.95)';
+                                    e.currentTarget.style.borderColor = '#fff'; // Blanco
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.transform = '';
+                                    // Restablece el borde original (gris claro o el que uses por defecto)
+                                    e.currentTarget.style.borderColor = '';
+                                }}
                                 onClick={() => {
                                     // Obtenemos la hora actual
                                     const hours = new Date().getHours();
@@ -151,15 +161,29 @@ export default function BannerAds({ isDarkMode }) {
                                 <div>
                                     {/* Imagen del producto */}
                                     <div
-                                        className="flex items-center justify-center h-64"
-                                        style={{ marginBottom: '10px' }}
+                                        style={{
+                                            width: '100%',       // ancho total
+                                            height: '160px',     // altura fija (ajústalo a tu gusto)
+                                            overflow: 'hidden',  // para que se recorte el contenido sobrante
+                                            marginBottom: '10px',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                        }}
                                     >
                                         <img
                                             src={product.srcImg}
                                             alt={product.name}
-                                            className="max-h-full w-auto object-contain rounded-xl"
+                                            style={{
+                                                width: '100%',         // ocupa 100% del contenedor
+                                                height: '100%',        // ocupa 100% del contenedor
+                                                objectFit: 'cover',    // recorta vertical u horizontalmente
+                                                objectPosition: 'center',
+                                                borderRadius: '0.5rem',
+                                            }}
                                         />
                                     </div>
+
 
                                     {/* Información del producto */}
                                     <div className="flex-1">
@@ -186,6 +210,13 @@ export default function BannerAds({ isDarkMode }) {
                                             product.tallas && (
                                                 <p className="text-sm text-gray-400">
                                                     Tallas: {product.tallas}
+                                                </p>
+                                            )
+                                        }
+                                        {
+                                            product.procedencia && (
+                                                <p className="text-sm text-gray-400">
+                                                    Procedencia: {product.procedencia}
                                                 </p>
                                             )
                                         }
