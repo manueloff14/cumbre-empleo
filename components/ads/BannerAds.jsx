@@ -4,57 +4,87 @@ export default function BannerAds({ isDarkMode }) {
     const products = [
         {
             id: 1,
-            name: "Morral Acrílico Pequeño",
-            discountPercentage: 22,
-            currentPrice: 79900,
+            name: "Audífonos Bluetooth Inalámbricos F9-5 con Diseño In-Ear - Color Negro",
+            discountPercentage: 20,
+            currentPrice: 35000,
             description: "Descripción breve del Product 4.",
-            material: "Lona de Alta Resistencia",
-            srcImg: "https://i.ibb.co/HNn7JcY/IMG-20250106-WA0039.jpg"
+            caracteristicas: [
+                "Con micrófono incorporado.",
+                "Con cancelación de ruido.",
+                "Resistentes al agua."
+            ],
+            srcImg: "https://http2.mlstatic.com/D_NQ_NP_833098-MLU77721699939_072024-O.webp",
+            envioGratis: true
         },
         {
             id: 2,
-            name: "Bolso Mediano TOTTO Liso",
+            name: "Cargador Rápido USB Tipo C - 100% Compatible y Eficiente",
             discountPercentage: 25,
-            currentPrice: 89900,
+            currentPrice: 40000,
             description: "Descripción breve del Product 1.",
-            procedencia: "Producto Importado 🇱🇷",
-            srcImg: "https://i.ibb.co/B6znhqx/Whats-App-Image-2025-01-06-at-2-45-02-PM.jpg"
+            caracteristicas: [
+                "Velocidad carga rápida",
+                "Voltaje de entrada: 110V/220V",
+                "Tipo de conector: USB/USB-C"
+            ],
+            srcImg: "https://http2.mlstatic.com/D_NQ_NP_636716-MCO77163947416_072024-O.webp",
+            envioGratis: true
         },
         {
             id: 3,
-            name: "Morral Acrílico Pequeño",
+            name: "Base Refrigerante con Cooler Consmo F528 para Portátiles",
             discountPercentage: 22,
-            currentPrice: 79900,
+            currentPrice: 45000,
             description: "Descripción breve del Product 4.",
-            material: "Lona de Alta Resistencia",
-            srcImg: "https://i.ibb.co/r0cMpCb/IMG-20250106-WA0038.jpg"
+            caracteristicas: [
+                "Ventilador integrado.",
+                "Luces azules modernas.",
+                "Compatible hasta 17 pulgadas"
+            ],
+            srcImg: "https://http2.mlstatic.com/D_NQ_NP_773421-MCO49296444853_032022-O.webp",
+            envioGratis: true
         },
         {
             id: 4,
-            name: "Morral Acrílico Pequeño",
-            discountPercentage: 22,
-            currentPrice: 79900,
+            name: "Bolso Elegante para Mujer Manos Libres - Marca Karla Chacón, Color Negro",
+            discountPercentage: 20,
+            currentPrice: 95000,
             description: "Descripción breve del Product 4.",
-            material: "Lona de Alta Resistencia",
-            srcImg: "https://i.ibb.co/XL5vv4C/IMG-20250106-WA0037.jpg"
+            caracteristicas: [
+                "Material externo sintético.",
+                "Fabricación 100% vegana.",
+                "Correa ajustable y removible."
+            ],
+            srcImg: "https://http2.mlstatic.com/D_NQ_NP_748353-MLU76331028879_052024-O.webp",
+            envioGratis: true
         },
         {
             id: 5,
-            name: "Morral Acrílico Pequeño",
-            discountPercentage: 22,
-            currentPrice: 79900,
+            name: "Power Bank 10,000 mAh con Carga Rápida 30W - USB Tipo C y Lightning, Color Negro",
+            discountPercentage: 13,
+            currentPrice: 155000,
             description: "Descripción breve del Product 4.",
-            material: "Lona de Alta Resistencia",
-            srcImg: "https://i.ibb.co/7WrB9q6/IMG-20250106-WA0036.jpg"
+            caracteristicas: [
+                "Capacidad 10,000 mAh.",
+                "Carga rápida 30W.",
+                "Compatibilidad USB y TypeC."
+            ],
+            srcImg: "https://http2.mlstatic.com/D_NQ_NP_955522-MLU78491284045_082024-O.webp",
+            envioGratis: true
         },
         {
             id: 6,
-            name: "Morral Acrílico Pequeño",
+            name: "Audífonos Inalámbricos Bowmann BW-M10 TWS con Power Bank - Color Negro",
             discountPercentage: 22,
-            currentPrice: 79900,
+            currentPrice: 35000,
             description: "Descripción breve del Product 4.",
-            material: "Lona de Alta Resistencia",
-            srcImg: "https://i.ibb.co/fpJ3Whb/IMG-20250106-WA0035.jpg"
+            caracteristicas: [
+                "Asistente de voz integrado: Siri.",
+                "Con micrófono incorporado.",
+                "Posee 2 micrófonos integrados."
+            ],
+            srcImg: "https://http2.mlstatic.com/D_NQ_NP_878926-MLU71264088698_082023-O.webp",
+            envioGratis: true
         }
     ];
 
@@ -82,6 +112,27 @@ export default function BannerAds({ isDarkMode }) {
 
     return (
         <div>
+            <div
+                style={{
+                    background: "linear-gradient(to right, rgb(255, 208, 21), #FBBF24)", // Tonos más suaves
+                    padding: "1rem", // Espacio interno ajustado
+                    borderRadius: "1.5rem", // Bordes redondeados
+                    marginBottom: "1rem", // Espaciado inferior
+                    display: "flex", // Asegura alineación
+                    alignItems: "center", // Centrado vertical
+                    justifyContent: "center", // Centrado horizontal
+                    boxShadow: "0 6px 10px rgba(0, 0, 0, 0.1)", // Sombra sutil
+                }}
+            >
+                <img
+                    src="https://logodownload.org/wp-content/uploads/2018/10/mercado-libre-logo.png"
+                    alt="Logo de MercadoLibre"
+                    style={{
+                        width: "120px", // Ajusta el tamaño
+                    }}
+                />
+            </div>
+
             <div className="flex justify-between items-center mb-4 font-bold">
                 <span>
                     Patrocinado
@@ -118,12 +169,12 @@ export default function BannerAds({ isDarkMode }) {
                             <div
                                 key={product.id}
                                 style={{
-                                    minWidth: "180px",
+                                    minWidth: "230px",
                                     // Agregamos paddingLeft excepto en el último
                                     marginRight: index === products.length - 1 ? 0 : "16px",
                                     overflow: 'visible'
                                 }}
-                                className="h-[100px] border-[1px] border-gray-400 dark:border-gray-700 rounded-2xl p-4 flex flex-col justify-between cursor-pointer transition-transform duration-300 ease-in-out"
+                                className="h-[100px] border-[1px] border-gray-400 dark:border-gray-700 rounded-2xl p-4 flex flex-col justify-between cursor-pointer transition-transform duration-300 ease-in-out relative"
                                 onMouseEnter={(e) => {
                                     e.currentTarget.style.transform = 'scale(0.95)';
                                     e.currentTarget.style.borderColor = '#fff'; // Blanco
@@ -148,7 +199,7 @@ export default function BannerAds({ isDarkMode }) {
                                     }
 
                                     // Construimos el mensaje
-                                    const message = `Hola, ${greeting}, me ha gustado el "${product.name}" con ID: ${product.id} que he visto en la página de Cumbre Empleos, deseo saber más información, gracias.`;
+                                    const message = `Hola, ${greeting}, me ha gustado el *"${product.name}"* con *ID: ${product.id}* que he visto en la página de *Cumbre Empleos*, deseo saber más información, gracias.`;
 
                                     // Codificamos el mensaje para la URL
                                     const encodedMessage = encodeURIComponent(message);
@@ -159,11 +210,33 @@ export default function BannerAds({ isDarkMode }) {
                                 title={product.name}
                             >
                                 <div>
+
+                                    {/* Indicador de "Envío Gratis" flotante */}
+                                    {product.envioGratis && (
+                                        <div
+                                            style={{
+                                                background: "#FF5050", // Fondo rojo para destacar
+                                                color: "#fff", // Texto blanco
+                                                padding: "0.4rem 0.8rem", // Espaciado interno
+                                                borderRadius: "1rem", // Bordes redondeados
+                                                position: "absolute", // Posición flotante
+                                                top: "1.3rem", // Desde la parte superior
+                                                right: "1.3rem", // Desde la parte derecha
+                                                fontSize: "0.75rem", // Tamaño del texto
+                                                fontWeight: "bold", // Negrita
+                                                zIndex: 1, // Asegura que esté encima de otros elementos
+                                            }}
+                                        >
+                                            Envío Gratis
+                                        </div>
+                                    )}
+
+
                                     {/* Imagen del producto */}
                                     <div
                                         style={{
                                             width: '100%',       // ancho total
-                                            height: '160px',     // altura fija (ajústalo a tu gusto)
+                                            height: '180px',     // altura fija (ajústalo a tu gusto)
                                             overflow: 'hidden',  // para que se recorte el contenido sobrante
                                             marginBottom: '10px',
                                             display: 'flex',
@@ -225,6 +298,19 @@ export default function BannerAds({ isDarkMode }) {
                                                 <p className="text-sm text-gray-400">
                                                     Material: {product.material}
                                                 </p>
+                                            )
+                                        }
+                                        {
+                                            product.caracteristicas && (
+                                                /* habilitamos los puntos en la lista con styles in line */
+
+                                                <ul className="text-xs text-gray-400" style={{ listStyle: 'disc', paddingLeft: '1rem' }}>
+                                                    {product.caracteristicas.map((caracteristica, index) => (
+                                                        <li key={index}>
+                                                            {caracteristica}
+                                                        </li>
+                                                    ))}
+                                                </ul>
                                             )
                                         }
                                     </div>
