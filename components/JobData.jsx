@@ -7,9 +7,9 @@ export default function JobData({ data, jobDetails, isExpired, isDarkMode }) {
         <div className="flex flex-col lg:flex-row gap-5 items-start py-3">
             <ul className="space-y-6 w-full lg:w-[60%]">
                 {/* Condicional para mostrar el mensaje basado en isExpired */}
-                <div className="w-full">
+                {/* <div className="w-full">
                     {isExpired ? '' : <BannerAds isDarkMode={isDarkMode} />}
-                </div>
+                </div> */}
                 <JobDescription jobDescription={data.jobDescription} />
             </ul>
             <div className="w-full lg:w-[50%]">
