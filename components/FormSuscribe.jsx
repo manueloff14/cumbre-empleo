@@ -386,16 +386,33 @@ export default function FormSuscribe({ isVisible, onClose }) {
                             value={formData.phone}
                             onChange={(e) => {
                                 // Permitir solo números
-                                const sanitizedValue = e.target.value.replace(
+                                let sanitizedValue = e.target.value.replace(
                                     /[^0-9]/g,
                                     ""
                                 );
+
+                                // Limitar a 10 caracteres como máximo
+                                if (sanitizedValue.length > 10) {
+                                    sanitizedValue = sanitizedValue.slice(
+                                        0,
+                                        10
+                                    );
+                                }
+
                                 handleChange("phone", sanitizedValue);
+                            }}
+                            onBlur={(e) => {
+                                // Validar si el número tiene exactamente 10 dígitos
+                                if (e.target.value.length !== 10) {
+                                    alert(
+                                        "El número debe tener exactamente 10 dígitos."
+                                    );
+                                }
                             }}
                             placeholder="Escribe tu número"
                             className="w-full border border-gray-300 rounded-md py-2 px-3 text-sm
-                                focus:ring-indigo-500 focus:border-indigo-500
-                                dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200"
+                            focus:ring-indigo-500 focus:border-indigo-500
+                            dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200"
                         />
                         <ErrorMessage message={error} />
                     </div>
