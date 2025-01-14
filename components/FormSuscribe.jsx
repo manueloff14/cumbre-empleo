@@ -411,7 +411,7 @@ export default function FormSuscribe({ isVisible, onClose }) {
                             noticias de Cumbre Empleos.
                         </p>
                         <a
-                            href="https://wa.me/1234567890"
+                            href="https://whatsapp.com/channel/0029Vaxz8Bx0bIdleFi33r2h"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="bg-green-500 text-white font-semibold text-sm py-3 px-4
